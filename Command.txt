@@ -1,0 +1,8 @@
+1. g++ --shared -fPIC -o MyClass.so MyClass.cpp
+-> These command use to create .so file
+
+2. c++  user.c -ldl
+-> These command use to compile user file
+
+3. ./a.out
+-> These command use to run the user file

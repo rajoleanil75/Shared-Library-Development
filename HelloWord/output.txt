@@ -1,0 +1,5 @@
+ In Constructor of Hello
+ In Accept function of Hello
+ In Display function of Hello
+ Value of i: 1
+ In Destructor of Hello
