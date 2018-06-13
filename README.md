@@ -1,18 +1,18 @@
 # Shared-Library-Development
-	A shared library is a file containing object code that several a.out files may use 
+  A shared library is a file containing object code that several a.out files may use 
 simultaneously while executing. When a program is link edited with a shared library, the 
 library code that defines the program's external references is not copied into the program's 
 object file. Instead, a special section called .lib that identifies the library code is created 
 in the object file. When the UNIX system executes the resulting a.out file, it uses the 
 information in this section to bring the required shared library code into the address space of the process. 
 
-	The implementation behind these concepts is a shared library with two pieces. 
+  The implementation behind these concepts is a shared library with two pieces. 
 The first, called the host shared library, is an archive that the link editor searches to 
 resolve user references and to create the .lib section in a.out files. The structure and 
 operation of this archive is the same as any archive without shared library members. 
 It must be present on the system when the a.out files are link edited.
 
-	The second part of a shared library is the target shared library. This is the file 
+  The second part of a shared library is the target shared library. This is the file 
 that the UNIX system uses when running a.out files built with the host shared library. 
 It contains the actual code for the routines in the library. It must be present on the the 
 system where the a.out files will be run. 
@@ -28,7 +28,7 @@ flexible and sophisticated than this, because the approach used by Linux permits
     2. override specific libraries or even specific functions in a library when executing a particular program.
 
     3. do all this while programs are running using existing libraries.
-    
+
 
 A shared library offers several benefits by not copying code into a.out files. It can:
 
