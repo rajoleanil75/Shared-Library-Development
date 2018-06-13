@@ -5,12 +5,13 @@
 
 int main(int argc, char const *argv[])
 {
-	void* sobj = NULL;
-	SinglyLL *ptr = NULL;
-	SinglyLL* (*fp1)() = NULL;
-	void (*fp2)(SinglyLL*) = NULL;
 
-	sobj = dlopen("/mnt/f/C Project/Shared-library-development/Data-Structures/SinglyLLClass.so",RTLD_LAZY);
+	///////////////////////////For Doubly Link list Shared Library//////////////////////////
+	void* sobj = NULL;
+	DoublyLL *ptr = NULL;
+	DoublyLL* (*fp1)() = NULL;
+	void (*fp2)(DoublyLL*) = NULL;
+	sobj = dlopen("/mnt/f/C Project/Shared-library-development/Data-Structures/Doubly-link-list/DoublyLLClass.so",RTLD_LAZY);
 	if(!sobj)
 	{
 		fprintf(stderr, "%s\n", dlerror());
@@ -18,8 +19,8 @@ int main(int argc, char const *argv[])
 	}
 	else
 	{
-		fp1 = (SinglyLL*(*)())dlsym(sobj,"create");
-		fp2 = (void(*)(SinglyLL*))dlsym(sobj,"destroy");
+		fp1 = (DoublyLL*(*)())dlsym(sobj,"create");
+		fp2 = (void(*)(DoublyLL*))dlsym(sobj,"destroy");
 
 		ptr =fp1();
 
@@ -36,10 +37,11 @@ int main(int argc, char const *argv[])
 		ptr->deleteAtPosition(2);
 		ptr->display();
 		int cnt = ptr->count();
-		printf("\nTotal Element: %d",cnt);
+		printf("Total Element: %d",cnt);
 
 		fp2(ptr);
 		dlclose(sobj);
 	}
+	/////////////////////////////////////////////////////////////////////
 	return 0;
 }
