@@ -45,3 +45,5 @@ If an error in shared library code is fixed, all processes automatically use the
 
 	Non-shared libraries cannot offer this benefit: changes to archive libraries do not affect executable files, 
 because code from the libraries is copied to the files during link editing, not during execution. 
+By Anil rajole
+By Anil
